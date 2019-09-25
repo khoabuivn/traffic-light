@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import TrafficLight from './components/TrafficLight';
 
@@ -11,8 +10,10 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      currentColor: RED
+      currentColor: RED,
+      type: 'bulb'
     }
+    
     setInterval(() => {
       this.setState({
         currentColor: this.getNextLight(this.state.currentColor)
@@ -23,20 +24,18 @@ class App extends Component {
     switch (color) {
       case RED:
         return YELLOW;
-        break;
       case YELLOW:
         return GREEN;
-        break;
       case GREEN:
         return RED;
-        break;
-      default:
+      default: 
         break;
     }
     
   }
   render() {
-    const { currentColor } = this.state.currentColor;
+    const { currentColor } = this.state;
+    console.log(currentColor);
     return <div className="App">
       <TrafficLight currentColor={currentColor} />
     </div>

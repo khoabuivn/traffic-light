@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './TrafficLight.css';
 
-var classnames = require('classnames');
+import classnames from 'classnames';
 
 const RED = 0;
 const YELLOW = 1;
